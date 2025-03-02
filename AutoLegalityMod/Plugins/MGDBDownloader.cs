@@ -50,7 +50,8 @@ namespace AutoModPlugins
             var entire = prompt == DialogResult.Yes;
             EventsGallery.DownloadMGDBFromGitHub(MGDatabasePath, entire);
             WinFormsUtil.Alert("Download Finished");
-            EncounterEvent.RefreshMGDB(MGDatabasePath);
+            string[] MGDatabasePaths = { MGDatabasePath };
+            EncounterEvent.RefreshMGDB(MGDatabasePaths);
         }
 
         public static void DeleteDirectory(string target_dir)

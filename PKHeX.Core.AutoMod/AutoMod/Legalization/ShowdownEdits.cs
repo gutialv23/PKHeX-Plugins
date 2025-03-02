@@ -201,7 +201,7 @@ namespace PKHeX.Core.AutoMod
                 (GameVersion)pk.Version
             );
             var nickname = newnick.Length > maxlen ? newnick[..maxlen] : newnick;
-            if (!WordFilter.IsFiltered(nickname, out _))
+            if (!WordFilter.IsFiltered(nickname, out _, pk.Context))
                 pk.SetNickname(nickname);
             else
                 pk.ClearNickname();

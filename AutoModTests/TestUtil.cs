@@ -20,7 +20,8 @@ namespace AutoModTests
             {
                 if (Initialized)
                     return;
-                EncounterEvent.RefreshMGDB();
+                string[] MGDatabasePaths = {};
+                EncounterEvent.RefreshMGDB(MGDatabasePaths);
                 RibbonStrings.ResetDictionary(GameInfo.Strings.ribbons);
                 Legalizer.EnableEasterEggs = false;
                 APILegality.SetAllLegalRibbons = false;

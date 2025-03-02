@@ -684,7 +684,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
                 if (typeView)
                     WinFormsUtil.Alert($"Block type is {block.Type}.");
 
-                result = block.Data;
+                result = block.Data.ToArray();
             }
 
             bool blockview = (ModifierKeys & Keys.Control) == Keys.Control;
@@ -870,7 +870,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
     private static byte[] GetBlockDataRaw(object sb, byte[] data) =>
         sb switch
         {
-            SCBlock sc => sc.Data,
+            SCBlock sc => sc.Data.ToArray(),
             IDataIndirect sv => sv.Data.ToArray(),
             _ => data,
         };
